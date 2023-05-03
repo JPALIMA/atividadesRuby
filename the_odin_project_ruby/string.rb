@@ -34,3 +34,30 @@ name = "odin"
 puts "Hello, #{name}"  #=> "hello, Odin"
 puts 'hello, #{name}' #=> "Hello, #{name}"
 
+#Commom Sring methods
+#capitalize
+
+"hello". capitalize #=> "hello"
+
+#include?
+
+"hello".include?("to") #=> true
+"hello".include?("z") #=> false
+
+#upcase
+
+"hello". downcase #=> "hello"
+
+#empety?
+
+"empty"? #=> 5
+
+#reverse
+
+"hello".reverse #=> "olleh"
+
+#split
+
+"hello world".split #=> ["hello", "world"]
+
+"hello world".split("") #=> ["h","e", "1", "l", "o]
