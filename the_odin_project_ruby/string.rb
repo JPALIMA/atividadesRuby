@@ -61,3 +61,29 @@ puts 'hello, #{name}' #=> "Hello, #{name}"
 "hello world".split #=> ["hello", "world"]
 
 "hello world".split("") #=> ["h","e", "1", "l", "o]
+
+#strip
+
+"hello, world ".strip #=> "hello, world"
+
+"he77o.sub("7", "1") #=> "hel7o"
+
+"he77o".gsub("7", "1") #=> hello"
+
+"hello".insert(-1, " dude") #=> "hello dude"
+"hello.world"delete("1") #=> "heo word"
+"!".prepend("hello, ",  " world") #=> "hello, world!"
+
+#Covertendo outros objetos em cadeias de caracteres
+
+5.to_s #=> "5"
+nil.to_s #=> ""
+:symbol.to_s #=> "symbol"
+
+#Simbolos
+
+my_symbol
+
+#string" == "string" #=> true
+"string".object_id == "string".object_id #=> false
+:symbol.object_id == :symbol.object_id #=> true
