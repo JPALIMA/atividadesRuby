@@ -1,4 +1,4 @@
-num1 = 5
-num2 = 7
-sum = num1 + num2
-puts "A soma é #{sum}"
+a = 5
+b = 10 
+soma = a + b
+puts "A soma de #{a} e #{b} é igual a #{soma}."
