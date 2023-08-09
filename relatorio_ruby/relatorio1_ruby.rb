@@ -12,19 +12,19 @@ table_data = [
 Prawn::Document.generate('relatorio.pdf') do
   font_size 12
 
-  #Configuração
+  #Configuração para evitar o aviso sobre fontes internas
+  Prawn::Fonts::AFM.hide_m17n_warning = true
 
   # Criação da tabela usando loops
-  table_data.each_with_index do |row, row_index|
-    row.each_with_index do |cell, col_index|
-      if row_index == 0
-        text cell, style: :bold, background_color: 'DDDDDD', align: :center
-      else
-        text cell, align: :center
-      end
+  table(table_data, header: true, width: bounds.width) do |t|
+    t.cells.style(align: :center, padding: 5)
+    t.row(0).style(font_style: :bold, background_color: 'DDDDDD')
+
+    #Renderização dos dados da tabela
+    table_data[1..-1].each do |row|
+      row.each { |cell| t.cell(cell.to_s) }
     end
-    move_down 10
   end
 
-  # Outras partes do seu relatório
+    # Outras partes do seu relatório
 end
