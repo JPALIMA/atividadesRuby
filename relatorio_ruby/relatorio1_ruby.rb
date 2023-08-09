@@ -1,30 +1,21 @@
 require 'prawn'
+require 'prawn/table'
 
-# Dados de exemplo para a tabela
+#Crie uma instância do Prawn::Document
+pdf = Prawn::Document.new
+
+#Defina os dados da tabela
 table_data = [
-  ['Nome', 'Idade', 'Cidade'],
-  ['João', 30, 'São Paulo'],
-  ['Maria', 25, 'Rio de Janeiro'],
-  ['Pedro', 28, 'Belo Horizonte']
+  ['Cabeçalho 1', 'Cabeçalho 2', 'Cabeçalho 3'],
+  ['Dado 1', 'Dado 2', 'Dado 3'],
+  ['Dado 4', 'Dado 5', 'Dado 6']
 ]
 
-# Criação do PDF
-Prawn::Document.generate('relatorio.pdf') do
-  font_size 12
-
-  #Configuração para evitar o aviso sobre fontes internas
-  Prawn::Fonts::AFM.hide_m17n_warning = true
-
-  # Criação da tabela usando loops
-  table(table_data, header: true, width: bounds.width) do |t|
-    t.cells.style(align: :center, padding: 5)
-    t.row(0).style(font_style: :bold, background_color: 'DDDDDD')
-
-    #Renderização dos dados da tabela
-    table_data[1..-1].each do |row|
-      row.each { |cell| t.cell(cell.to_s) }
-    end
-  end
-
-    # Outras partes do seu relatório
+#Crie a tabela usando a gem prawn-table
+pdf.table(table_data, header: true, width: pdf.bounds.width) do |t|
+  t.cells.borders = [:bottom]
 end
+
+# Salve o documento em um arquivo PDF
+
+  pdf.render_file('relatorio.pdf')
