@@ -12,6 +12,8 @@ table_data = [
 Prawn::Document.generate('relatorio.pdf') do
   font_size 12
 
+  #Configuração
+
   # Criação da tabela usando loops
   table_data.each_with_index do |row, row_index|
     row.each_with_index do |cell, col_index|
