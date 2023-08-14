@@ -1,5 +1,6 @@
 require 'prawn'
-require 'prawn_charts'
+
+Prawn::Fonts::AFM.hide_m17n_warning = true
 
 data = [
   ['ID', 'Nome', 'Idade'],
@@ -12,18 +13,12 @@ Prawn::Document.generate('relatorio.pdf') do
   text 'Relatório de Dados', align: :center, size: 18, style: :bold
   move_down 20
 
-  table(data, header: true, width: bounds.width) do |t|
-    t.cells.borders = [:bottom]
-  end
-
-  move_down 20
-
-  chart_data = { 'João' => 30, 'Maria' => 28, 'Pedro' => 35 }
-  chart = PrawnCharts::Builder.build do |pdf, options|
-    bar_chart pdf, chart_data, options
-  end
-
-  bounding_box([0, cursor], width: bounds.width) do
-    chart.render(self)
+  data.each do |row|
+    row.each_with_index do |cell, index|
+      bounding_box([index * 200, cursor], width: 200) do
+        text cell.to_s
+      end
+    end
+    move_down 20
   end
 end
