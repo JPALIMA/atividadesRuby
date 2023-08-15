@@ -1,6 +1,6 @@
 require 'prawn'
 
-Prawn::Document.generate('relatorio.pdf') do 
+Prawn::Document.generate('relatorio.pdf') do
      image 'C:\\Users\\JOAO PEDRO\\Documents\\Atividades_basicas_ruby\\relatorio_ruby\\logo.png', width: 150,
      position: :center
      move_down 20
