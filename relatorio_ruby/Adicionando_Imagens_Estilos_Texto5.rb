@@ -2,12 +2,12 @@ require 'prawn'
 
 Prawn::Fonts::AFM.hide_m17n_warning = true
 
-Prawn::Document.generate('relatorio.pdf') do 
-     image 'C:\\Users\\JOAO PEDRO\\Documents\\Atividades_basicas_ruby\\relatorio_ruby\\logo.png', width: 150,
+Prawn::Document.generate('relatorio.pdf') do
+     image 'C:\\User\\JOAO PEDRO\\Documents\\Atividades_basicas_ruby\\relatotio_ruby\\logo.png', width: 150,
      position: :center
      move_down 20
 
-     text 'Relatorio de Produtos', align: :center, size: 18, style: :bold
+     text 'Relatorio de Produtos', aligh: :center, size: 18, style::bold
      move_down 20
 
      text 'A seguir, apresentamos alguns produtos mais vendidos:', style: :italic
