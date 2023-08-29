@@ -3,7 +3,7 @@ require 'prawn'
 Prawn::Fonts::AFM.hide_m17n_warning = true
 
 prawn::Document.generate('relatorio.pdf') do
-     image 'C:\\User\\JOAO PEDRO\\Documents\\Ativiadades_basicas_ruby\\relatorio_ruby\\logo.png', width: 150,
+     image 'C:\\User\\JOAO PEDRO\\Documents\\Atividades_basicas_ruby\\relatorio_ruby\\logo.png', widht: 150,
      position: :center
      move_down 20
 
