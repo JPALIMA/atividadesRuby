@@ -1,5 +1,7 @@
 require 'prawn'
 
+Prawn::Fonts::AFM.hide_m17n_warning = true
+
 Prawn::Document.generate('relatorio.pdf') do
   image 'C:\\Users\\JOAO PEDRO\\Documents\\Atividades_basicas_ruby\\relatorio_ruby\\logo.png', width: 150,
         position: :center
