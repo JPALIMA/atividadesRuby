@@ -1,6 +1,6 @@
 require 'prawn'
 
-Prawn::Fonts::AFM.hide_m17n_warning = true
+Prawn::Fontes::AFM.hide_m17n_warning = true
 
 prawn::Document.generate('relatorio.pdf') do
      image 'C:\\User\\JOAO PEDRO\\Documents\\Atividades_basicas_ruby\\relatorio_ruby\\logo.png', widht: 150,
@@ -12,7 +12,7 @@ prawn::Document.generate('relatorio.pdf') do
      produtos = [
           { name: 'Produto A', price: '$10.00'},
           { name: 'Produto B', price: '$15.00'},
-          { name: 'Produto C', price: '$20.00'}
+          { name: 'Produto C', price: '$20.00'} 
      ]
 
      produtos.each do |produto|
